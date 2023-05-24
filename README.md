@@ -4,6 +4,9 @@ Follow these steps to plan and complete your web development project:
 
 1. **Project Definition**: Clearly define the goals and requirements of the project. Determine the purpose, target audience, and desired features.
 
+-- My project goals:
+My project is about a blog that showcases my abilities and personal interests in the coding world. It explores how I started, why I chose this path, and documents the experiences I am encountering on my journey to become a full-time software developer.
+
 2. **Research and Inspiration**: Explore existing websites or projects that are similar to what you want to create. Take note of design elements, functionalities, and user experiences that inspire you.
 
 3. **Wireframing and Prototyping**: Create a rough sketch or wireframe of your website's layout and structure. Use prototyping tools or software to create interactive prototypes that demonstrate user flow and interactions.
