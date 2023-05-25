@@ -1,0 +1,25 @@
+{
+  "name": "you-me-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "browsersList": [
+    "defaults"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^2.4.1",
+    "astro-icon": "^0.8.0",
+    "postcss": "^8.4.23",
+    "postcss-preset-env": "^8.4.1"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
+  }
+}

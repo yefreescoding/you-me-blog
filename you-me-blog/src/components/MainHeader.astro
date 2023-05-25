@@ -1,0 +1,33 @@
+---
+import Navbar from './Nav.astro';
+---
+
+<header class="header">
+    <p class="header__promo">'New Blog is being build'
+      <a class="header__promo header__promo--link" href="#" target="_blank">
+        Support me if you feel like it.
+      </a>
+    </p> 
+    <Navbar></Navbar>
+</header>
+
+<style lang='scss'>
+  .header{
+    display: flex;
+    flex-direction: column;
+    &__promo{
+      padding: .5rem 0;
+      text-align: center;
+      font-size: .8rem;
+      color: #111;
+      border-bottom: .5px solid hsl(0, 0%, 70%);
+      &--link{
+        text-decoration: underline;
+        transition: all .15s linear;
+        &:hover {
+          color: hsl(300, 78%, 46%);
+        }
+      }
+    }
+  }
+</style>

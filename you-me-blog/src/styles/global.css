@@ -1,0 +1,41 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+
+  /* outline: 0.3px solid grey; */
+}
+
+img,
+video,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+button {
+  background: transparent;
+  border: 0.5px solid transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}

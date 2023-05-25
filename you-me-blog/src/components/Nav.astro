@@ -1,0 +1,79 @@
+---
+// data imports
+import navData from '../Data/NavData';
+---
+<nav class="nav">
+  <a href="/" class="nav__logo">
+    <img class="nav__image" src="/glasses.png/" alt="">
+    <!-- <Icon name="favicon" width='400'></Icon> -->
+    <div class="nav__text">
+      Yefree's <span class="nav__text nav__text--blog">Blog</span>
+    </div>
+  </a>
+  <ul class="nav__ul">
+    {
+      navData.map((item) => 
+        <li class="nav__li">
+         <a href={item.link} class="nav__links" data-navLink>{item.name}</a>
+        </li>
+      )
+    }
+  </ul>
+</nav>
+
+<style lang="scss">
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    :is(&__logo, &__ul){
+      display: flex;
+      flex: 1;
+    }
+    &__logo{
+      
+      align-items: center;
+      gap: .8rem;
+      color: hsl(0, 0%, 20%);
+    }
+    &__image{
+      width: 4rem;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+    &__text{
+      font-size: 1.1rem;
+      font-weight: 700;
+
+      &--blog{
+        color: hsl(0, 0%, 70%);
+      }
+    }
+    &__ul{
+      
+      justify-content: space-around;
+    }
+    &__links {
+      text-transform: capitalize;
+      color: #111;
+      font-weight: 600;
+      border: transparent 1px solid;
+      border-radius: 8px;
+      padding: .3rem .5rem;
+      transition: all .2s linear;
+      &:hover {
+        background-color: hsl(0, 0%, 85%);
+      }
+      &[aria-current=page]{
+        background-color: #111;
+        color: white;
+      }
+    }
+  }
+
+  
+</style>
+
+<script>
+  import '../js/nav';
+</script>
