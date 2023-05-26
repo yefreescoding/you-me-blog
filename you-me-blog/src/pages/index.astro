@@ -3,12 +3,35 @@ import Mainlayout from '../layouts/MainLayout.astro';
 ---
 
 <Mainlayout title="Yefree's blog">
-	<h1>Yefree's blog</h1>
-	<div class="main">
-		<h2>Test</h2>
-		<p>Cositas</p>
-	</div>
+	<section class="main">
+		<h1 class="main__h1">Yefree's blog</h1>
+		<h2 class="main__h2">Page is currently in construction</h2>
+		<p class="main__p">Todo tendra mucho sentido dentro de poco...</p>
+		<img class="main__image" src="/build.png" alt="Building a website icon">
+	</section>
 </Mainlayout>
 
 <style lang='scss'>
+	.main{
+		display: grid;
+		place-items: center;
+		gap: 1rem;
+
+		&__h1{
+			font-size: 3rem;
+		}
+		&__h2{
+
+		}
+		&__p{
+
+		}
+		&__image{
+			width: 13rem;
+			aspect-ratio: 1;
+			object-fit: contain;
+			object-position: center;
+		}
+
+	}
 </style>
