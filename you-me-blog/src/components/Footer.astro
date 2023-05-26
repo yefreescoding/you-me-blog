@@ -1,16 +1,104 @@
 ---
+import navData from '../Data/NavData';
 
+const socialLinks = [
+  {
+    title: 'Instagram',
+    link: 'https://www.instagram.com/' 
+  },
+  {
+    title: 'Twitter',
+    link: 'https://twitter.com/'
+  },
+  {
+    title: 'GitHub',
+    link: 'https://github.com/'    
+  },
+]
+
+const ConnectLinks = [
+  {
+    title: 'About',
+    link: '/about/' 
+  },
+  {
+    title: 'Mail',
+    link: '#'
+  },
+  {
+    title: 'GitHub',
+    link: 'https://github.com/'    
+  },
+]
 ---
 
 <footer class="footer">
-  <div>
-    <small>
+  <nav class="footer__nav">
+    <div class="footer__division">
+      <h3 class="footer__h3">Social Media</h3>
+      {
+        socialLinks.map((item) => 
+          <a class="footer__links" href={item.link}>{item.title}</a>
+        )
+      }
+    </div>
+    <div class="footer__division">
+      <h3 class="footer__h3">Connect</h3>
+      {
+        ConnectLinks.map((item) => 
+          <a class="footer__links" href={item.link}>{item.title}</a>
+        )
+      }
+      {
+      }
+    </div>
+  </nav>
+  <div class="footer__copyright">
+    <small class="footer__meta">
       copyright &copy;
-      <span id="copyright"></span>
+      <span id="copyright" class="footer__date"></span>
       | All right reserved.
     </small>
   </div>
 </footer>
+
+<style lang="scss">
+
+
+  .footer{
+    :is(&, &__division){
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    padding: 3rem;
+    background-color: hsl(0, 0%, 95%);
+    &__nav{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+      place-items: center;
+      // gap: 1rem;
+    }
+    &__h3{
+
+    }
+    &__links{
+      color: hsl(0, 0%, 60%);
+
+    }
+    &__copyright{
+      text-align: center;
+
+    }
+    &__meta{
+
+    }
+    &__date{
+
+    }
+
+  }
+</style>
 
 <script>
   document.querySelector("#copyright").textContent = new Date().getFullYear().toString();

@@ -26,12 +26,12 @@ import navData from '../Data/NavData';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-inline: 1rem;
     :is(&__logo, &__ul){
       display: flex;
       flex: 1;
     }
     &__logo{
-      
       align-items: center;
       gap: .8rem;
       color: hsl(0, 0%, 20%);
@@ -50,8 +50,8 @@ import navData from '../Data/NavData';
       }
     }
     &__ul{
-      
-      justify-content: space-around;
+      justify-content: flex-end;
+      gap: 1rem;
     }
     &__links {
       text-transform: capitalize;

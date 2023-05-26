@@ -3,5 +3,62 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <h1>About Me</h1>
+  <section class="section-about" aria-label="About The Me">
+    <div class="section-about__text">
+      <h2 class="section-about__h2">About Me</h2>
+      <p class="section-about__p">
+        Hey there! I'm <span class="section-about__p section-about__p--author">Yefree</span>, 
+        a passionate and outgoing front-end software developer with a deep love for programming. 
+        With a professional and detail-oriented approach, I strive to create engaging and 
+        user-friendly web experiences using cutting-edge technologies.
+      </p>
+      <p class="section-about__p">
+        In terms of my technical abilities, I have a strong foundation as a front-end developer 
+        with expertise in JavaScript, React, and other related technologies. I'm constantly expanding 
+        my knowledge and staying up-to-date with the latest industry trends and best practices.
+      </p>
+      <p class="section-about__p">
+        I invite you to join me on this exciting adventure, as we embark on a 
+        journey of learning, sharing, and discovering the limitless possibilities
+        of front-end development.
+      </p>
+      </p>
+    </div>
+    <img class="section-about__img" src="/images/hero.PNG" alt="Illustration about the creator of the blog">
+  </section>
 </MainLayout>
+
+<style lang="scss">
+  .section-about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(25rem, 100%), 1fr));
+    margin: 4rem;
+    &__text{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+
+    }
+    &__h2{
+      font-size: clamp(2rem, 1rem + 7vw, 4rem);
+
+    }
+    &__p{
+      font-size: 1.3rem;
+      font-weight: 600;
+
+      &--author{
+        color: rgb(0, 183, 255);
+      }
+    }
+
+    &__img{
+      object-fit: contain;
+      object-position: center;
+      aspect-ratio: 1;
+    }
+
+  }
+
+</style>
