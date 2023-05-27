@@ -1,0 +1,102 @@
+---
+//import layout
+import Mainlayout from './MainLayout.astro';
+
+import { slugify, formatDate } from '../js/utils';
+
+const { frontmatter } = Astro.props;
+
+const {title, description, date, category, author, image} = frontmatter;
+---
+
+<Mainlayout title={title} {description}>
+  <div class="wrapper">
+    <main class="entry-container">
+    <header class="header-blog">
+        <a class="primary header-blog__link" href=`/category/${category}/`>{category}</a>
+        <h1 class="header-blog__h1">{title}</h1>
+        <div class="header-blog__division">
+          <p class="header-blog__author">Written by <a class="secondary" href=`/author/${slugify(author)}/`>{slugify(author)}</a> 
+          • {
+              formatDate(date)
+            }</p>
+        </div>
+      </header>
+      <img class="header-blog__image" src={image.src} alt={image.alt}>
+      <div class="entry">
+        <slot />
+      </div>
+    </main>
+    <aside class="aside">
+      <div class="aside__content">
+        <img class="aside__image" src="/images/aside-hero1.jpg" alt="">
+        <div class="aside__text">
+          <p class="aside__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, totam.</p>
+          <a class="aside__link" href="/">Link to another blog post</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</Mainlayout>
+
+<style lang="scss">
+  .wrapper,
+  .entry-container,
+  .entry,
+  .header-blog, 
+  .aside {
+    display: grid;
+    gap: 1.7rem;
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: .8rem;
+    @media (min-width:40em){
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .header-blog{
+    &__date,
+    &__author {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: hsl(150, 0%, 60%);
+    }
+
+  }
+  .header-blog__image{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  .entry-container{
+    padding: 1rem;
+  }
+  .aside{
+    // grid-template-rows: repeat(5, 1fr);
+    &__content,
+    &__text {
+      display: flex;
+      gap: 1rem;
+    }
+    &__content{
+      align-items: flex-start;
+    }
+    &__image{
+      width: 12rem;
+      object-fit: cover;
+      object-position: bottom;
+      aspect-ratio: 1;
+    }
+    &__text{
+      flex-direction: column;
+    }
+    &__p{
+      flex: 1;
+    }
+    &__link{
+      flex: 2;
+    }
+
+  }
+
+</style>

@@ -3,25 +3,20 @@ import Mainlayout from '../layouts/MainLayout.astro';
 ---
 
 <Mainlayout title="Page Not Found">
-  <section class="section-found">
-    <span class="section-found__error">404</span>
-    <h1 class="section-found__h1">
+  <main class="main">
+    <span class="main__error">404</span>
+    <h1 class="main__h1">
       UPS! There's a problem with some conections
     </h1>
-    <p class="section-found__p">
+    <p class="main__p">
       This error message means that we did some errors while setting up the site
     </p>
-    <a class="section-found__link" href="/">Go back to home</a>
-  </section>
+    <a class="primary main__link" href="/">Go back to home</a>
+  </main>
 </Mainlayout>
 
 <style lang='scss'>
-  .section-found{
-    display: grid;
-    place-items: center;
-    text-align: center;
-    margin: 3rem 0;
-    gap: 1rem;
+  .main{
     &__error{
       font-size: 4rem;
       font-weight: 800;
@@ -29,23 +24,10 @@ import Mainlayout from '../layouts/MainLayout.astro';
     }
     &__h1{
       font-size: 3rem;
-
-    }
-    &__link{
-
-      background-color: #111;
-      color: white;
-      padding: .5rem 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      width: fit-content;
-      border-radius: 8px;
-
     }
     &__p{
       font-size: 1.5rem;
       font-weight: 600;
     }
-
   }
 </style>

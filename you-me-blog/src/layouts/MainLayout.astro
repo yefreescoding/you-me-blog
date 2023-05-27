@@ -1,8 +1,8 @@
 ---
 // Components imports
-import MainHead from "./MainHead.astro";
-import MainHeader from "../components/MainHeader.astro";
-import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
+import MainHeader from "./MainHeader.astro";
+import Footer from "./Footer.astro";
 
 // Styles import 
 import '../styles/global.css'
@@ -16,17 +16,7 @@ const { title } = Astro.props;
   <MainHead {title}></MainHead>
   <MainHeader></MainHeader>
 	<body>
-		<main>
-      <slot />
-    </main>
+    <slot />
     <Footer></Footer>
 	</body>
 </html>
-
-<style lang="scss">
-  body{
-    font-family: 'Open Sans', sans-serif;
-    width: min(90em, 100% - .5rem);
-    margin-inline: auto;
-  }
-</style>

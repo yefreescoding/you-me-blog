@@ -3,24 +3,42 @@ import Mainlayout from '../../layouts/MainLayout.astro';
 ---
 
 <Mainlayout title="Yefree's blog">
-  <section class="section-header">
-    <header class="section-header__header">
-      <h1 class="section-header__h1">Blog Entries</h1>
-      <div class="section-header__division">
-        <span class="section-header__update">
+  <main class="main">
+    <header class="main__header">
+      <h1 class="main__h1">Blog Entries</h1>
+      <div class="main__division">
+        <span class="main__update">
           Last update
         </span>
-        <span id="blog-update" class="section-header__date">26-5-2023</span>
+        <span id="blog-update" class="main__date">26-5-2023</span>
       </div>
     </header>
     <p>
       Here you can find all the entries I've posted in the last weeks
       From newest to latest, Check them out.
     </p>
+  </main>
+  <section class="entries">
+    <a href="./post-1/">1 post</a>
   </section>
-  
-	<div class="main">
-	</div>
 </Mainlayout>
+
 <style lang='scss'>
+  .main{
+    &__header{
+
+    }
+    &__h1{
+
+    }
+    &__division{
+
+    }
+    &__update{
+
+    }
+    &__date{
+
+    }
+  }
 </style>

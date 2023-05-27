@@ -39,3 +39,48 @@ a:active,
 a:hover {
   text-decoration: none;
 }
+
+h1 {
+  font-size: clamp(2rem, 1rem + 7vw, 4rem);
+  color: hsl(0, 0%, 20%);
+}
+
+p {
+  font-size: clamp(1.1rem, 1rem + 2vw, 1.3rem);
+  font-weight: 600;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  width: min(90em, 100% - 0.5rem);
+  margin-inline: auto;
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding: min(5vh, 3rem) 1rem;
+  margin: 3rem 0;
+}
+
+.primary {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 95%);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.secondary {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 20%);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: fit-content;
+  border-radius: 8px;
+}
