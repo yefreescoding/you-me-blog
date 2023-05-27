@@ -1,0 +1,21 @@
+---
+const { frontmatter, url, tagType } = Astro.props;
+
+const Tag = tagType;
+
+const {title, description, date, category, author, image} = frontmatter;
+---
+
+<!-- <pre>{JSON.stringify(frontmatter, null, 2)}</pre> -->
+
+<artcle class="card">
+  <div>
+    <a href={category}>{category}</a>
+  </div>
+  <a href={url}>
+    <img src={image.src} alt={image.alt}>
+    <Tag>{title}</Tag>
+    <p>{description}</p>
+    <span>{date}</span>
+  </a>
+</artcle>
