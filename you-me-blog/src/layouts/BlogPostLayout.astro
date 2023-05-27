@@ -18,6 +18,7 @@ const {title, description, date, category, author, image} = frontmatter;
         </div>
     </main>
     <aside class="aside">
+      <h2 class="aside__h2">More posts</h2>
       <div class="aside__content">
         <img class="aside__image" src="/images/aside-hero1.jpg" alt="">
         <div class="aside__text">
@@ -31,11 +32,8 @@ const {title, description, date, category, author, image} = frontmatter;
 
 <style lang="scss">
   .wrapper {
-    grid-template-columns: 1fr;
-    padding: .8rem;
-    @media (min-width:40em){
-      grid-template-columns: 2fr 1fr;
-    }
+    display: flex;
+    flex-wrap: wrap;
   }
   .header-blog{
     &__date,
@@ -45,16 +43,20 @@ const {title, description, date, category, author, image} = frontmatter;
       color: hsl(150, 0%, 60%);
     }
   }
-  .blog-image {
-    aspect-ratio: 16/9;
-    object-position: top;
-    object-fit: cover;
-  }
   .entry-container{
-    padding: 1rem;
+    padding: min(5vh, 2rem);
+    flex-basis: 35em;
+    flex-grow: 99;
   }
-  .aside{
-    // grid-template-rows: repeat(5, 1fr);
+  .aside{ 
+    flex-basis: 30em;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    &__h2{
+      border-bottom: 1px solid hsl(0, 0%, 85%);
+    }
     &__content,
     &__text {
       display: flex;
@@ -64,7 +66,7 @@ const {title, description, date, category, author, image} = frontmatter;
       align-items: flex-start;
     }
     &__image{
-      width: 12rem;
+      width: 10rem;
       object-fit: cover;
       object-position: bottom;
       aspect-ratio: 1;
@@ -77,5 +79,4 @@ const {title, description, date, category, author, image} = frontmatter;
       color: hsl(188, 30%, 40%);
     }
   }
-
 </style>

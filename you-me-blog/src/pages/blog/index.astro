@@ -1,44 +1,21 @@
 ---
 import Mainlayout from '../../layouts/MainLayout.astro';
+
+const allPosts = await Astro.glob("./*.md"); 
 ---
 
 <Mainlayout title="Yefree's blog">
-  <main class="main">
-    <header class="main__header">
-      <h1 class="main__h1">Blog Entries</h1>
-      <div class="main__division">
-        <span class="main__update">
-          Last update
-        </span>
-        <span id="blog-update" class="main__date">26-5-2023</span>
-      </div>
-    </header>
-    <p>
-      Here you can find all the entries I've posted in the last weeks
-      From newest to latest, Check them out.
+	<main class="main">
+		<h1 class="main__h1">Blog Entries</h1>
+		<p class="main__p">
+      Inspiring work and projects from emerging and established artists, designers, 
+      illustrators and photographers, along with mini-interviews and in-depth 
+      profiles to help spark the best creative ideas.
     </p>
-  </main>
+	</main>
   <section class="entries">
-    <a href="./post-1/">1 post</a>
+    
   </section>
 </Mainlayout>
-
 <style lang='scss'>
-  .main{
-    &__header{
-
-    }
-    &__h1{
-
-    }
-    &__division{
-
-    }
-    &__update{
-
-    }
-    &__date{
-
-    }
-  }
 </style>

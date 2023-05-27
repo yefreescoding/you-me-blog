@@ -61,14 +61,14 @@ body {
   place-items: center;
   text-align: center;
   gap: 0.8rem;
-  padding: min(5vh, 3rem) 1rem;
+  padding: min(10vh, 5rem) 10vw;
   margin: 3rem 0;
 }
 
 .primary {
   background-color: hsl(0, 0%, 20%);
   color: hsl(0, 0%, 95%);
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   width: fit-content;
@@ -76,10 +76,10 @@ body {
 }
 
 .secondary {
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
   background-color: hsl(0, 0%, 90%);
   color: hsl(0, 0%, 20%);
-  padding: 0.5rem 1rem;
-  font-weight: 600;
   text-transform: uppercase;
   width: fit-content;
   border-radius: 8px;
@@ -88,8 +88,13 @@ body {
 .wrapper,
 .entry-container,
 .entry,
-.header-blog,
-.aside {
+.header-blog {
   display: grid;
   gap: 1.7rem;
+}
+
+.blog-image {
+  aspect-ratio: 16/9;
+  object-position: top;
+  object-fit: cover;
 }
