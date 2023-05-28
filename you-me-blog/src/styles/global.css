@@ -35,9 +35,9 @@ ul {
 }
 
 a,
-a:active,
-a:hover {
+a:active {
   text-decoration: none;
+  color: hsl(0, 0%, 20%);
 }
 
 h1 {
@@ -47,13 +47,13 @@ h1 {
 
 p {
   font-size: clamp(1rem, 1rem + 2vw, 1.3rem);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  width: min(90em, 100% - 0.5rem);
   margin-inline: auto;
+  width: min(90em, 100% - 1rem);
 }
 
 .main {
@@ -64,6 +64,8 @@ body {
   padding: min(10vh, 5rem) 10vw;
   margin: 3rem 0;
 }
+
+/* Links styles */
 
 .primary {
   background-color: hsl(0, 0%, 20%);
@@ -84,6 +86,8 @@ body {
   width: fit-content;
   border-radius: 8px;
 }
+
+/* Blog styles */
 
 .wrapper,
 .entry-container,

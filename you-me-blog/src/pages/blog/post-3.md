@@ -1,15 +1,13 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
-title: My Journey as a Junior Web Developer
-date: 05/27/2023
+title: What do I go now?
+date: 05/28/2023
 author: Yefree Valdez
-image: { src: '/images/bg-hero.jpg', alt: 'Background picture.' }
+image: { src: '/images/aside-hero2.jpg', alt: 'Background picture.' }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.
 draft: false
 category: Reference docs
 ---
-
-## Hello Friends!
 
 Hey there, fellow coding enthusiasts! Welcome to my brand-new blog, where I'm thrilled to embark on this exciting journey as a junior web developer. Here, I'll be sharing all the ups and downs, victories and challenges, and everything in between that I encounter along the way.
 

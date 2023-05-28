@@ -49,8 +49,6 @@ const ConnectLinks = [
           <a class="footer__links" href={item.link}>{item.title}</a>
         )
       }
-      {
-      }
     </div>
   </nav>
   <div class="footer__copyright">
@@ -63,32 +61,25 @@ const ConnectLinks = [
 </footer>
 
 <style lang="scss">
-
-
   .footer{
+    margin-top: 3rem;
     :is(&, &__division){
       display: flex;
       flex-direction: column;
       gap: .5rem;
     }
     padding: .5rem 3rem;
-    background-color: hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 99%);
     &__nav{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
       place-items: center;
-      // gap: 1rem;
-    }
-    &__h3{
-
     }
     &__links{
       color: hsl(0, 0%, 60%);
-
     }
     &__copyright{
       text-align: center;
-
     }
     &__meta{
 
