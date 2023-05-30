@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
-title: What do I go now?
-date: 05/28/2023
+title: The first job
+date: 2023-05-29
 author: Yefree Valdez
 image: { src: '/images/aside-hero2.jpg', alt: 'Background picture.' }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.

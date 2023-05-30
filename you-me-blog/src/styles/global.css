@@ -53,7 +53,7 @@ p {
 body {
   font-family: 'Open Sans', sans-serif;
   margin-inline: auto;
-  width: min(90em, 100% - 1rem);
+  width: min(80em, 100% - 1rem);
 }
 
 .main {

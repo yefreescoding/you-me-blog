@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
 title: My Journey as a Junior Web Developer
-date: 05/27/2023
+date: 2023-05-25
 author: Yefree Valdez
 image: { src: '/images/bg-hero.jpg', alt: 'Background picture.' }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.
