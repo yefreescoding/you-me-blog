@@ -8,7 +8,7 @@ const {title, description, date, category, author, image} = frontmatter;
 ---
 
 <Mainlayout title={title} {description}>
-  <div class="wrapper">
+  <div class="wrapper-blog">
     <main class="entry-container">
       <BlogHeader 
         {title} {description} {date} {category} {author} {image}
@@ -31,7 +31,7 @@ const {title, description, date, category, author, image} = frontmatter;
 </Mainlayout>
 
 <style lang="scss">
-  .wrapper {
+  .wrapper-blog {
     display: flex;
     flex-wrap: wrap;
     margin: 5rem 0;
@@ -46,11 +46,11 @@ const {title, description, date, category, author, image} = frontmatter;
   }
   .entry-container{
     padding: min(5vh, 2rem);
-    flex-basis: 35em;
-    flex-grow: 99;
+    flex-basis: 30em;
+    flex-grow: 5;
   }
   .aside{ 
-    flex-basis: 30em;
+    flex-basis: 20em;
     flex-grow: 1;
     display: flex;
     flex-flow: column;
