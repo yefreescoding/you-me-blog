@@ -1,30 +1,75 @@
-## Project Workflow
+# Personal blog - Astro 🚀
 
-Follow these steps to plan and complete your web development project:
+This is a little project for a upcoming artist that to me she looks very
 
-1. **Project Definition**: Clearly define the goals and requirements of the project. Determine the purpose, target audience, and desired features.
+## Table of contents
 
--- My project goals:
-My project is about a blog that showcases my abilities and personal interests in the coding world. It explores how I started, why I chose this path, and documents the experiences I am encountering on my journey to become a full-time software developer.
+- [Project Structure](#project-structure)
+- [Commands](#commands)
+- [Overview](#overview)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-2. **Research and Inspiration**: Explore existing websites or projects that are similar to what you want to create. Take note of design elements, functionalities, and user experiences that inspire you.
+```
+npm create astro@latest -- --template minimal
+```
 
-3. **Wireframing and Prototyping**: Create a rough sketch or wireframe of your website's layout and structure. Use prototyping tools or software to create interactive prototypes that demonstrate user flow and interactions.
+## Project Structure
 
-4. **Design and Visuals**: Develop a visual design concept for your website. Choose colors, typography, and imagery that align with the project's theme and target audience. Create high-fidelity mockups or design assets using graphic design tools.
+Inside of your Astro project, you'll see the following folders and files:
 
-5. **Front-end Development**: Start coding your website using HTML, CSS, and JavaScript. Break down the project into smaller tasks and prioritize them. Begin with the basic structure, layout, and styling, and then progressively add interactivity and functionality.
+```
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-6. **Testing and Debugging**: Regularly test your website across different devices and browsers to ensure it works well and is responsive. Identify and fix any bugs or issues that may arise during testing.
+## Commands
 
-7. **Content Creation**: Write and add relevant content to your website, such as blog posts, articles, or product descriptions. Optimize the content for search engines (SEO) if necessary.
+All commands are run from the root of the project, from a terminal:
 
-8. **Optimization and Performance**: Optimize your website's performance by minifying CSS and JavaScript files, optimizing images, and implementing caching techniques. Ensure your website loads quickly and efficiently.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:3000`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-9. **Responsive and Mobile Optimization**: Make sure your website is fully responsive and optimized for mobile devices. Test its responsiveness on various screen sizes and make adjustments as needed.
+## 👀 Want to learn more?
 
-10. **Deployment**: Choose a suitable hosting provider and deploy your website online. Set up domain and hosting, configure server settings, and upload your website files. Conduct final tests to ensure everything is working correctly.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-11. **Monitoring and Maintenance**: Regularly check and monitor your website for any issues or updates. Perform routine maintenance tasks, such as updating plugins or frameworks, backing up data, and resolving any security vulnerabilities.
+## Overview
 
-Feel free to adapt and adjust this workflow based on the specific requirements of your project. Good luck with your web development projects!
+### Links
+
+- Where to get the code: [GitHub Repository](https://github.com/yefreescoding/you-me-blog.git)
+- Live Site URL: [Vercel Live Site](https://you-me-blog.vercel.app/)
+
+## My process
+
+### Built with
+
+- Astro Framework [Astro](https://astro.build/)
+- Semantic HTML5 markup
+- CSS custom properties
+- FlexBox
+- CSS Grid
+- Mobile-first workflow
+
+### Useful resources
+
+- [Astro Blog Course - Full 3.5 hour course](https://youtu.be/6XzyobQYQVQ) - Great starting point, the video explain everything you need to know to get started with Astro.
+
+## Author
+
+- Website - [Yefree De Los Santos](https://github.com/yefreescoding)
+- Twitter - [@YefreeCodes](https://twitter.com/YefreeCodes)
