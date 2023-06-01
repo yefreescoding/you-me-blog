@@ -6,7 +6,6 @@ const { title, description, date, category, image } = frontmatter;
 import { formatDate } from "../js/utils.js";
 ---
 
-<!-- <pre>{JSON.stringify(frontmatter, null, 2)}</pre> -->
 <artcle class="card">
   <div class="card__reference">
     <a class="secondary" href={category}>{category}</a>
@@ -39,7 +38,6 @@ import { formatDate } from "../js/utils.js";
     }
     &__h2 {
       position: relative;
-      // width: fit-content;
       &::after {
         content: "";
         inset: 0 0 0 0;
