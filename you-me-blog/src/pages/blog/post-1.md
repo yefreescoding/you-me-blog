@@ -1,19 +1,25 @@
 ---
-layout: '../../layouts/BlogPostLayout.astro'
+layout: "../../layouts/BlogPostLayout.astro"
 title: My Journey as a Junior Web Developer
 date: 2023-05-25
 author: Yefree Valdez
-image: { src: '/images/bg-hero.jpg', alt: 'Background picture.' }
+image: { src: "/images/hero-images/hero.PNG", alt: "Background picture." }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.
 draft: false
-category: Reference docs
+category: personal
 ---
+
+[Link to my bio](../abot/)
 
 ## Hello Friends!
 
-Hey there, fellow coding enthusiasts! Welcome to my brand-new blog, where I'm thrilled to embark on this exciting journey as a junior web developer. Here, I'll be sharing all the ups and downs, victories and challenges, and everything in between that I encounter along the way.
+**Hey there, fellow coding enthusiasts!**
+
+Welcome to my brand-new blog, where I'm thrilled to embark on this exciting journey as a junior web developer. Here, I'll be sharing all the ups and downs, victories and challenges, and everything in between that I encounter along the way.
 
 As a newbie in the vast world of programming and software development, I can't wait to dive headfirst into this adventure. I believe that sharing my experiences will not only help me reflect on my own growth but also provide valuable insights and inspiration to fellow developers who may be starting their own coding endeavors.
+
+## What to expect??
 
 Expect a mix of anecdotes, lessons learned, and practical tips that I've picked up as I've tackled different projects and explored various technologies. From my initial struggles with HTML and CSS to my first exhilarating steps into JavaScript, I'm excited to share the milestones that mark my progression.
 
