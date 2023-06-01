@@ -1,12 +1,13 @@
 ---
-import Mainlayout from '../../layouts/MainLayout.astro';
-import PostCard from '../../components/PostCard.astro';
-import Main from '../../components/Main.astro';
+import Mainlayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import Main from "../../components/Main.astro";
+import SectionEntry from "../../components/SectionEntry.astro";
 
-const allPosts = await Astro.glob("./*.md"); 
+const allPosts = await Astro.glob("./*.md");
 
-// utils 
-import { formatBlogPost } from '../../js/utils';
+// utils
+import { formatBlogPost } from "../../js/utils";
 
 const formattedPosts = formatBlogPost(allPosts, {
   filterOutDrafts: false,
@@ -16,27 +17,18 @@ const formattedPosts = formatBlogPost(allPosts, {
 ---
 
 <Mainlayout title="Yefree's blog">
-	<Main pageTitle="Blog Entries">
-		<p class="main__p">
-      Inspiring work and projects from all the resources I like to use to learn, from 
-      amazing designers, developers and programmers, along with all my thoughts and 
-      opinions.
+  <Main pageTitle="Blog Entries">
+    <p class="main__p">
+      Inspiring work and projects from all the resources I like to use to learn,
+      from amazing designers, developers and programmers, along with all my
+      thoughts and opinions.
     </p>
-	</Main>
-  <section class="entries" aria-label="New blog posts">
+  </Main>
+  <SectionEntry>
     {
-      formattedPosts.map((post) => 
-        <PostCard frontmatter={post.frontmatter} 
-          url={post.url} tagType="h2" />
-      )
+      formattedPosts.map((post) => (
+        <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
+      ))
     }
-  </section>
+  </SectionEntry>
 </Mainlayout>
-
-<style lang='scss'>
-  .entries{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
-    gap: 3rem;
-  }
-</style>
