@@ -21,15 +21,17 @@ import { formatDate } from "../js/utils.js";
 
 <style lang="scss">
   .card {
-    display: flex;
+    :is(&, &__link) {
+      display: flex;
+    }
     flex-flow: column;
     &__reference {
       font-size: 0.9rem;
     }
-    .card__link {
-      display: flex;
+    &__link {
       flex-flow: column;
       gap: 1rem;
+      color: hsl(0, 0%, 20%);
     }
     &__image {
       object-fit: cover;
@@ -37,10 +39,10 @@ import { formatDate } from "../js/utils.js";
     }
     &__h2 {
       position: relative;
-      width: fit-content;
+      // width: fit-content;
       &::after {
         content: "";
-        inset: auto 0 0 0;
+        inset: 0 0 0 0;
         position: absolute;
         background-color: hsl(40, 93%, 62%);
         height: 3px;
@@ -51,7 +53,8 @@ import { formatDate } from "../js/utils.js";
       font-size: 1rem;
     }
     &__date {
-      color: hsl(197, 84%, 38%);
+      color: hsl(197, 84%, 58%);
+      font-weight: 600;
     }
   }
 </style>

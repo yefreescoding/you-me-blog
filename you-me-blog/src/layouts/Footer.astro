@@ -1,35 +1,35 @@
 ---
-import navData from '../Data/NavData';
+import navData from "../Data/NavData";
 
 const socialLinks = [
   {
-    title: 'Instagram',
-    link: 'https://www.instagram.com/' 
+    title: "Instagram",
+    link: "https://www.instagram.com/",
   },
   {
-    title: 'Twitter',
-    link: 'https://twitter.com/'
+    title: "Twitter",
+    link: "https://twitter.com/",
   },
   {
-    title: 'GitHub',
-    link: 'https://github.com/'    
+    title: "GitHub",
+    link: "https://github.com/",
   },
-]
+];
 
 const ConnectLinks = [
   {
-    title: 'About',
-    link: '/about/' 
+    title: "About",
+    link: "/about/",
   },
   {
-    title: 'Mail',
-    link: '#'
+    title: "Mail",
+    link: "#",
   },
   {
-    title: 'GitHub',
-    link: 'https://github.com/'    
+    title: "GitHub",
+    link: "https://github.com/",
   },
-]
+];
 ---
 
 <footer class="footer">
@@ -37,17 +37,21 @@ const ConnectLinks = [
     <div class="footer__division">
       <h3 class="footer__h3">Social Media</h3>
       {
-        socialLinks.map((item) => 
-          <a class="footer__links" href={item.link}>{item.title}</a>
-        )
+        socialLinks.map((item) => (
+          <a class="footer__links" href={item.link}>
+            {item.title}
+          </a>
+        ))
       }
     </div>
     <div class="footer__division">
       <h3 class="footer__h3">Connect</h3>
       {
-        ConnectLinks.map((item) => 
-          <a class="footer__links" href={item.link}>{item.title}</a>
-        )
+        ConnectLinks.map((item) => (
+          <a class="footer__links" href={item.link}>
+            {item.title}
+          </a>
+        ))
       }
     </div>
   </nav>
@@ -61,36 +65,33 @@ const ConnectLinks = [
 </footer>
 
 <style lang="scss">
-  .footer{
+  .footer {
     margin-top: 3rem;
-    :is(&, &__division){
+    :is(&, &__division) {
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: 0.5rem;
     }
-    padding: .5rem 3rem;
+    color: hsl(0, 0%, 60%);
+    padding: 0.5rem 3rem;
     background-color: hsl(0, 0%, 99%);
-    &__nav{
+    text-align: center;
+    &__nav {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
       place-items: center;
     }
-    &__links{
+    &__h3 {
+      font-size: 1.3rem;
+    }
+    &__links {
       color: hsl(0, 0%, 60%);
     }
-    &__copyright{
-      text-align: center;
-    }
-    &__meta{
-
-    }
-    &__date{
-
-    }
-
   }
 </style>
 
 <script>
-  document.querySelector("#copyright").textContent = new Date().getFullYear().toString();
+  document.querySelector("#copyright").textContent = new Date()
+    .getFullYear()
+    .toString();
 </script>
