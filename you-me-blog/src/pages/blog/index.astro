@@ -1,24 +1,28 @@
 ---
 import Mainlayout from '../../layouts/MainLayout.astro';
 import PostCard from '../../components/PostCard.astro';
+import Main from '../../components/Main.astro';
 
 const allPosts = await Astro.glob("./*.md"); 
 
 // utils 
 import { formatBlogPost } from '../../js/utils';
 
-const formattedPosts = formatBlogPost(allPosts, {});
+const formattedPosts = formatBlogPost(allPosts, {
+  filterOutDrafts: false,
+  filterOutFuturePosts: false,
+  sortbyDate: true,
+});
 ---
 
 <Mainlayout title="Yefree's blog">
-	<main class="main">
-		<h1 class="main__h1">Blog Entries</h1>
+	<Main pageTitle="Blog Entries">
 		<p class="main__p">
       Inspiring work and projects from all the resources I like to use to learn, from 
       amazing designers, developers and programmers, along with all my thoughts and 
       opinions.
     </p>
-	</main>
+	</Main>
   <section class="entries" aria-label="New blog posts">
     {
       formattedPosts.map((post) => 

@@ -1,14 +1,29 @@
 ---
 import Mainlayout from '../layouts/MainLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import SectionEntry from '../components/SectionEntry.astro';
+import Main from '../components/Main.astro';
+
+const allPosts = await Astro.glob("./blog/*.md"); 
+
+import { formatBlogPost } from '../js/utils';
+
+const formattedPosts = formatBlogPost(allPosts, {
+	limit: 3,
+});
 ---
 
 <Mainlayout title="Yefree's blog">
-	<main class="main">
-		<h1 class="main__h1">Yefree's blog</h1>
-		<h2 class="main__h2">Page is currently in construction</h2>
-		<p class="main__p">Todo tendra mucho sentido dentro de poco...</p>
-		<img class="main__image" src="/build.png" alt="Building a website icon">
-	</main>
+	<Main pageTitle="Latest">
+	</Main>
+	<SectionEntry class="entries" aria-label="Latest blog posts">
+		{
+			formattedPosts.map((post) => 
+				<PostCard frontmatter={post.frontmatter} 
+					url={post.url} tagType="h2" />
+			)
+		}
+	</SectionEntry>
 </Mainlayout>
 
 <style lang='scss'>
@@ -20,4 +35,10 @@ import Mainlayout from '../layouts/MainLayout.astro';
 			object-position: center;
 		}
 	}
+
+	.entries{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    gap: 3rem;
+  }
 </style>

@@ -1,0 +1,17 @@
+---
+const { pageTitle, pageDescription } = Astro.props;
+---
+
+<main class="main">
+  <h1>{pageTitle}</h1>
+  <slot/>
+</main>
+
+<style>
+  .main{
+    display: flex;
+    flex-flow: column;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+</style>
