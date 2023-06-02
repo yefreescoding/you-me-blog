@@ -1,0 +1,56 @@
+---
+
+import Mainlayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import SectionEntry from "../../components/SectionEntry.astro";
+import Main from "../../components/Main.astro";
+
+
+import { slugify, formatBlogPost } from "../../js/utils";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../blog/*.md");
+  const formattedPosts = formatBlogPost(allPosts, {
+    limit: 3,
+  });
+  const allAuthors = [...new Set(
+    formattedPosts.map((post) => post.frontmatter.author),
+  )]
+  return allAuthors.map((author) => {
+    const authorPost = formattedPosts.filter((post) =>
+      post.frontmatter.author === author
+    );
+
+    return {
+      params: { author: slugify(author) },
+      props: { 
+        authorName: author,
+        posts: authorPost,
+      },
+
+    }
+  })
+}
+const { author } = Astro.params;
+const { posts, authorName } = Astro.props;
+---
+
+<Mainlayout title={authorName}>
+	<Main pageTitle={`Post By ${authorName}`}>
+		<p>
+			If you like the post wittten by {authorName}, 
+      you will find all of them on this section.
+		</p>
+	</Main>
+	<SectionEntry class="entries" aria-label="Latest blog posts">
+		{
+			posts.map((post) => (
+				<PostCard
+					frontmatter={post.frontmatter}
+					url={post.url}
+					tagType="h2"
+				/>
+			))
+		}
+	</SectionEntry>
+</Mainlayout>
