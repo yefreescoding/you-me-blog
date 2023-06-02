@@ -8,7 +8,9 @@ import { formatDate, slugify } from "../js/utils.js";
 
 <article class="card">
   <div class="card__reference">
-    <a class="primary" href=`/category/${slugify(category)}`>{slugify(category)}</a>
+    <a class="primary" href=`/category/${slugify(category)}`
+      >{slugify(category)}</a
+    >
   </div>
   <a class="card__link" href={url}>
     <img class="card__image" src={image.src} alt={image.alt} />
@@ -24,6 +26,7 @@ import { formatDate, slugify } from "../js/utils.js";
       display: flex;
     }
     flex-flow: column;
+    transition: all 0.3s ease-in-out;
     &__reference {
       font-size: 0.9rem;
     }
@@ -38,7 +41,6 @@ import { formatDate, slugify } from "../js/utils.js";
     }
     &__h2 {
       position: relative;
-      font-weight: 400;
       &::after {
         content: "";
         inset: 0 0 0 0;
@@ -54,6 +56,11 @@ import { formatDate, slugify } from "../js/utils.js";
     &__date {
       color: hsl(197, 84%, 58%);
       font-weight: 600;
+    }
+
+    &:hover {
+      box-shadow: inset 7em 0 0 0 hsla(195, 61%, 80%, 0.7);
+      color: white;
     }
   }
 </style>
