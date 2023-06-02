@@ -9,7 +9,7 @@ const allPosts = await Astro.glob("./blog/*.md");
 import { formatBlogPost } from "../js/utils";
 
 const formattedPosts = formatBlogPost(allPosts, {
-	limit: 4,
+	limit: 3,
 });
 ---
 

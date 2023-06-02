@@ -1,15 +1,15 @@
 ---
-layout: "../../layouts/BlogPostLayout.astro"
+layout: '../../layouts/BlogPostLayout.astro'
 title: My Journey as a Junior Web Developer
 date: 2023-05-25
 author: Yefree Valdez
-image: { src: "/images/hero-images/hero.PNG", alt: "Background picture." }
+image: { src: '/images/blog-images/hero-blog.jpeg', alt: 'Background picture.' }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.
 draft: false
 category: personal
 ---
 
-[Link to my bio](../abot/)
+[Link to my bio](../about/)
 
 ## Hello Friends!
 
