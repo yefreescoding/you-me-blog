@@ -68,6 +68,7 @@ body {
   margin-inline: auto;
   width: min(80em, 100% - 1rem);
   color: hsl(0, 0%, 20%);
+  background-color: hsl(60, 7%, 95%);
 }
 
 .main {
@@ -120,7 +121,7 @@ body {
 .preloader {
   display: grid;
   place-items: center;
-  background-color: white;
+  background-color: hsl(60, 7%, 95%);
   position: fixed;
   inset: 0;
   z-index: 1999;

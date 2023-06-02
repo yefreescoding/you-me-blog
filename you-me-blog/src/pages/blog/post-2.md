@@ -1,13 +1,13 @@
 ---
-layout: "../../layouts/BlogPostLayout.astro"
+layout: '../../layouts/BlogPostLayout.astro'
 title: Front End Developer Roadmap
 date: 2023-05-30
 author: Yefree Valdez
 image:
-  { src: "/images/blog-images/roadmap-blog.png", alt: "Background picture." }
+  { src: '/images/blog-images/roadmap-blog.png', alt: 'Background picture.' }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.
 draft: false
-category: web-dev
+category: web dev
 ---
 
 [Link to the official roadmap](https://roadmap.sh/frontend)

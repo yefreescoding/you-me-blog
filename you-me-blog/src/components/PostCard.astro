@@ -1,14 +1,14 @@
 ---
-const { frontmatter, url, tagType } = Astro.props;
+const { frontmatter, url } = Astro.props;
 
 const { title, description, date, category, image } = frontmatter;
 
-import { formatDate } from "../js/utils.js";
+import { formatDate, slugify } from "../js/utils.js";
 ---
 
 <artcle class="card">
   <div class="card__reference">
-    <a class="secondary" href={category}>{category}</a>
+    <a class="primary" href=`/category/${slugify(category)}`>{slugify(category)}</a>
   </div>
   <a class="card__link" href={url}>
     <img class="card__image" src={image.src} alt={image.alt} />
