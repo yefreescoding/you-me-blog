@@ -3,17 +3,21 @@
 import MainHead from "../components/MainHead.astro";
 import MainHeader from "./MainHeader.astro";
 import Footer from "./Footer.astro";
-
 // Styles import 
 import '../styles/global.css'
 
-// Libraries imports 
-// import { Icon } from "astro-icon";
+//import utils
+
+import {} from '../js/utils';
+
 const { title } = Astro.props;
 ---
 
 <html lang="en">
   <MainHead {title}></MainHead>
+  <div class="preloader">
+    <div class="orbit"></div>
+  </div>
   <MainHeader></MainHeader>
 	<body>
     <slot />
