@@ -18,11 +18,13 @@ const { title, description, date, category, author, image } = frontmatter;
     <aside class="aside">
       <h2 class="aside__h2">More posts</h2>
       <div class="aside__content">
-        <img class="aside__image" src="/images/blog-images/job-blog.png" alt="Girls thinking" />
+        <img
+          class="aside__image"
+          src="/images/blog-images/job-blog.png"
+          alt="Girls thinking"
+        />
         <div class="aside__text">
-          <p class="aside__p">
-            How to get your first job as a web developer
-          </p>
+          <p class="aside__p">How to get your first job as a web developer</p>
           <a class="aside__link" href="/blog/">Read the article</a>
         </div>
       </div>
@@ -41,14 +43,6 @@ const { title, description, date, category, author, image } = frontmatter;
   .wrapper-blog {
     flex-wrap: wrap;
     margin: 5rem 0;
-  }
-  .header-blog {
-    &__date,
-    &__author {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: hsl(150, 0%, 60%);
-    }
   }
   .entry-container {
     padding: min(5vh, 2rem);
