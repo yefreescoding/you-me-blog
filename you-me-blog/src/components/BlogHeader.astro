@@ -5,7 +5,7 @@ const {title, date, category, author, image} = Astro.props;
 ---
 
 <header class="header-blog">
-  <a class="primary header-blog__link" href=`/category/${category}/`>{category}</a>
+  <a class="primary header-blog__link" href=`/category/${slugify(category)}/`>{slugify(category)}</a>
   <h1 class="header-blog__h1">{title}</h1>
   <div class="header-blog__division">
     <p class="header-blog__author">Written by <a class="secondary" href=`/author/${slugify(author)}/`>{slugify(author)}</a> 
