@@ -4,16 +4,23 @@ import PostCard from "../../components/PostCard.astro";
 import Main from "../../components/Main.astro";
 import SectionEntry from "../../components/SectionEntry.astro";
 
-const allPosts = await Astro.glob("./*.md");
+
 
 // utils
 import { formatBlogPost } from "../../js/utils";
 
-const formattedPosts = formatBlogPost(allPosts, {
-  filterOutDrafts: false,
-  filterOutFuturePosts: false,
-  sortbyDate: true,
-});
+export async function getStaticPaths({paginate}){
+  const allPosts = await Astro.glob("./*.md");
+  const formattedPosts = formatBlogPost(allPosts);
+
+  return paginate(formattedPosts,{
+    pageSize: 3,
+  });
+}
+
+const {page} = Astro.props;
+console.log(page);
+
 ---
 
 <Mainlayout title="Yefree's blog">
@@ -26,7 +33,7 @@ const formattedPosts = formatBlogPost(allPosts, {
   </Main>
   <SectionEntry>
     {
-      formattedPosts.map((post) => (
+      page.data.map((post) => (
         <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
       ))
     }
