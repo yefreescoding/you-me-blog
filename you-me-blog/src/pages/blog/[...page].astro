@@ -1,10 +1,12 @@
 ---
+// Layout imports
 import Mainlayout from "../../layouts/MainLayout.astro";
-import PostCard from "../../components/PostCard.astro";
+
+// Components imports
 import Main from "../../components/Main.astro";
 import SectionEntry from "../../components/SectionEntry.astro";
-
-
+import PostCard from "../../components/PostCard.astro";
+import Pagination from "../../components/Pagination.astro";
 
 // utils
 import { formatBlogPost } from "../../js/utils";
@@ -35,7 +37,8 @@ console.log(page);
     {
       page.data.map((post) => (
         <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
-      ))
-    }
+        ))
+      }
   </SectionEntry>
+  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next}/>
 </Mainlayout>
