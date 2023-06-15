@@ -1,0 +1,49 @@
+---
+import { formatBlogPost, slugify } from '../js/utils';
+
+const todosLosPosts = await Astro.glob('../pages/blog/*.md');
+
+const postsFormateados = formatBlogPost(todosLosPosts);
+
+const todasLasCategorias = postsFormateados
+  .map((cat) => cat.frontmatter.category.toLowerCase())
+  .flat();
+
+const categoriasProcesadas = todasLasCategorias.reduce((acc, categoria) => {
+  // Checkea si la categoria existe en el acc
+  const valor = acc[categoria] || 0;
+  // Devolver el nuevo objeto
+  return {
+    ...acc,
+    [categoria]: valor + 1,
+  };
+}, {});
+
+const { mostrarNumero } = Astro.props;
+---
+
+<ul>
+  {
+    Object.entries(categoriasProcesadas).map(([key, val]) => (
+      <li>
+        <a class="secondary" href={`/category/${slugify(key)}`}>
+          {key}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  a {
+    flex: 1;
+  }
+</style>

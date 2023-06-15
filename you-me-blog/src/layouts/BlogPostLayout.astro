@@ -2,6 +2,7 @@
 //import layout
 import Mainlayout from './MainLayout.astro';
 import BlogHeader from '../components/BlogHeader.astro';
+import CategoryCloud from '../components/CategoryCloud.astro';
 
 const { frontmatter } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
@@ -17,17 +18,7 @@ const { title, description, date, category, author, image } = frontmatter;
     </main>
     <aside class="aside">
       <h2 class="aside__h2">More posts</h2>
-      <div class="aside__content">
-        <img
-          class="aside__image"
-          src="/images/blog-images/job-blog.png"
-          alt="Girls thinking"
-        />
-        <div class="aside__text">
-          <p class="aside__p">How to get your first job as a web developer</p>
-          <a class="aside__link" href="/blog/">Read the article</a>
-        </div>
-      </div>
+      <CategoryCloud />
     </aside>
   </div>
 </Mainlayout>

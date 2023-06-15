@@ -1,8 +1,11 @@
 ---
+// import components
+import CategoryCloud from './CategoryCloud.astro';
 const { pageTitle, pageDescription } = Astro.props;
 ---
 
 <section class="cover">
+  <CategoryCloud />
   <h1 class="cover__h1">{pageTitle}</h1>
   <slot />
 </section>
@@ -10,7 +13,6 @@ const { pageTitle, pageDescription } = Astro.props;
   .cover {
     gap: 1em;
     margin-block: 2vh;
-
     &__h1 {
       font-style: italic;
       font-size: var(--fs-5);

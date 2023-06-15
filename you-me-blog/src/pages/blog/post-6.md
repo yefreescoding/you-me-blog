@@ -1,12 +1,12 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
-title: A new way to create static web pages.
-date: 2023-06-14
+title: What is it the reality of becoming a web developer.
+date: 2023-06-15
 author: Yefree Valdez
 image: { src: '/images/blog-images/astro-blog.png', alt: 'Background picture.' }
-description: The new framework that is make things, a lot easier.
+description: Not everything that shines is gold.
 draft: false
-category: learning
+category: webdev
 ---
 
 ## Introducing Astro: The Game-Changing Framework for Static Websites

@@ -1,20 +1,32 @@
 ---
-
 //import components
-import Link from "./Link.astro";
+import Link from './Link.astro';
 
-const {prevUrl, nextUrl} = Astro.props;
+const { prevUrl, nextUrl } = Astro.props;
 ---
 
 <nav aria-label="Blog pages">
   {
-    prevUrl &&(
-      <a href={prevUrl} class="secondary">Previous page</a>
+    prevUrl && (
+      <a href={prevUrl} class="secondary">
+        Prev page
+      </a>
     )
   }
   {
-    nextUrl &&(
-      <a href={nextUrl} class="secondary">Next page</a>
+    nextUrl && (
+      <a href={nextUrl} class="secondary">
+        Next page
+      </a>
     )
   }
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+</style>
