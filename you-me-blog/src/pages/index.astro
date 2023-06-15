@@ -1,51 +1,47 @@
 ---
-import Mainlayout from "../layouts/MainLayout.astro";
-import PostCard from "../components/PostCard.astro";
-import SectionEntry from "../components/SectionEntry.astro";
-import Main from "../components/Main.astro";
+import Mainlayout from '../layouts/MainLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import SectionEntry from '../components/SectionEntry.astro';
+import Main from '../components/Main.astro';
 
-const allPosts = await Astro.glob("./blog/*.md");
+const allPosts = await Astro.glob('./blog/*.md');
 
-import { formatBlogPost } from "../js/utils";
+import { formatBlogPost } from '../js/utils';
 
 const formattedPosts = formatBlogPost(allPosts, {
-	limit: 3,
+  limit: 3,
 });
 ---
 
 <Mainlayout title="Yefree's blog">
-	<Main pageTitle="Latest">
-		<!-- <p>
-			<b>Welcome to the blog</b>. Here you can find the latest post I've
-			published recently.
-		</p> -->
-	</Main>
-	<SectionEntry class="entries" aria-label="Latest blog posts">
-		{
-			formattedPosts.map((post) => (
-				<PostCard
-					frontmatter={post.frontmatter}
-					url={post.url}
-					tagType="h2"
-				/>
-			))
-		}
-	</SectionEntry>
+  <Main pageTitle="Latest">
+    <p>
+      <strong class="highlight">Welcome to the blog</strong>. Here you can find
+      the latest post I've published recently.
+    </p>
+  </Main>
+  <SectionEntry class="entries" aria-label="Latest blog posts">
+    {
+      formattedPosts.map((post) => (
+        <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
+      ))
+    }
+  </SectionEntry>
 </Mainlayout>
 
 <style lang="scss">
-	.main {
-		&__image {
-			width: 13rem;
-			aspect-ratio: 1;
-			object-fit: contain;
-			object-position: center;
-		}
-	}
+  .main {
+    &__image {
+      width: 13rem;
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
 
-	.entries {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
-		gap: 3rem;
-	}
+  .entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    gap: 3rem;
+  }
 </style>

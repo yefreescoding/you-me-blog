@@ -11,6 +11,7 @@
   /* Colors */
   --text: #0e1103;
   --text-content: hsl(73, 20%, 14%);
+  --text-hl: hsl(196, 19%, 73%);
   --background: hsl(56, 70%, 96%);
   --primary-button: #2aa3cb;
   --secondary-button: #ffffff;
@@ -22,9 +23,10 @@
     /* Colors */
     --text: hsl(73, 70%, 94%);
     --text-content: hsl(73, 20%, 84%);
+    --text-hl: hsl(196, 19%, 73%);
     --background: hsl(56, 70%, 6%);
     --primary-button: hsl(195, 87%, 69%);
-    --secondary-button: #ffffff;
+    --secondary-button: hsl(0, 0%, 95%);
     --accent: hsl(315, 89%, 78%);
   }
 }
@@ -39,9 +41,14 @@ html {
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   margin-inline: auto;
-  width: min(100% - 0.5em, 90em);
+  width: min(100% - 0.5em, 80em);
   color: var(--text);
   background-color: var(--background);
+}
+
+body,
+.main {
+  display: grid;
 }
 
 *,
@@ -99,45 +106,26 @@ p {
   color: var(--text-content);
 }
 
-body,
-.main {
-  display: grid;
-}
-
-.main {
-  text-align: center;
-  gap: 1em;
-  padding-inline: 1em;
-  margin: 3em 0;
-}
-
-.entries {
-  margin: 5em 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(20em, 100%), 1fr));
-  gap: 3rem;
-}
-
 /* Links styles */
 
 .primary {
-  background-color: hsl(0, 0%, 20%);
-  color: hsl(0, 0%, 95%);
-  padding: 0.3rem 0.8rem;
-  font-weight: 600;
+  background-color: var(--accent);
+  color: var(--secondary-button);
+  padding: 0.3em 0.8em;
   text-transform: uppercase;
   width: fit-content;
-  border-radius: 8px;
 }
 
 .secondary {
-  font-weight: 600;
   padding: 0.3rem 0.8rem;
   background-color: hsl(0, 0%, 90%);
   color: hsl(0, 0%, 20%);
   text-transform: uppercase;
   width: fit-content;
-  border-radius: 8px;
+}
+
+.highlight {
+  color: var(--accent);
 }
 
 /* Blog styles */

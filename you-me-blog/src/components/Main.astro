@@ -2,7 +2,18 @@
 const { pageTitle, pageDescription } = Astro.props;
 ---
 
-<section class="main">
-  <h1>{pageTitle}</h1>
+<section class="cover">
+  <h1 class="cover__h1">{pageTitle}</h1>
   <slot />
 </section>
+<style lang="scss">
+  .cover {
+    gap: 1em;
+    margin-block: 2vh;
+
+    &__h1 {
+      font-style: italic;
+      font-size: var(--fs-5);
+    }
+  }
+</style>

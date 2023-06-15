@@ -26,6 +26,18 @@ import { formatDate, slugify } from '../js/utils.js';
       display: flex;
     }
     flex-flow: column;
+    border: 2px solid var(--text);
+    padding: 0.8rem;
+    box-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      box-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem,
+        rgba(240, 46, 170, 0.3) 0.625rem 0.625rem,
+        rgba(240, 46, 170, 0.2) 0.9375rem 0.9375rem,
+        rgba(240, 46, 170, 0.1) 1.25rem 1.25rem,
+        rgba(240, 46, 170, 0.05) 1.5625rem 1.5625rem;
+    }
+
     &__reference {
       font-size: 0.9rem;
     }

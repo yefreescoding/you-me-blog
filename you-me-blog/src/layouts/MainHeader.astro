@@ -6,12 +6,12 @@ import '../styles/global.css';
 ---
 
 <header class="header">
-  <p class="header__promo">
+  <small class="header__promo">
     Blog created entirely from scratch by
     <a class="header__promo header__promo--link" href="#" target="_blank">
       Yefree De Los Santos
     </a>
-  </p>
+  </small>
   <Navbar />
 </header>
 
@@ -19,13 +19,11 @@ import '../styles/global.css';
   .header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid black;
     &__promo {
-      padding: 0.5rem 0;
+      padding-block: 1vh;
       text-align: center;
-      font-size: 0.8rem;
-      color: #111;
-      border-bottom: 0.5px solid hsl(0, 0%, 70%);
       &--link {
         text-decoration: underline;
         transition: all 0.15s linear;

@@ -2,9 +2,10 @@
 // data imports
 import navData from '../Data/NavData';
 ---
+
 <nav class="nav">
   <a href="/" class="nav__logo">
-    <img class="nav__image" src="/glasses.png/" alt="">
+    <img class="nav__image" src="/glasses.png/" alt="" />
     <!-- <Icon name="favicon" width='400'></Icon> -->
     <div class="nav__text">
       Yefree's <span class="nav__text nav__text--blog">Blog</span>
@@ -12,61 +13,64 @@ import navData from '../Data/NavData';
   </a>
   <ul class="nav__ul">
     {
-      navData.map((item) => 
+      navData.map((item) => (
         <li class="nav__li">
-         <a href={item.link} class="nav__links" data-navLink>{item.name}</a>
+          <a href={item.link} class="nav__links" data-navLink>
+            {item.name}
+          </a>
         </li>
-      )
+      ))
     }
   </ul>
 </nav>
 
 <style lang="scss">
-  .nav{
+  .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-inline: 1rem;
-    :is(&__logo, &__ul){
+    :is(&__logo, &__ul) {
       display: flex;
       flex: 1;
     }
-    &__logo{
+    &__logo {
       align-items: center;
-      gap: .8rem;
-      color: hsl(0, 0%, 20%);
+      gap: 0.8rem;
     }
-    &__image{
+    &__image {
       width: 4rem;
       aspect-ratio: 1;
       object-fit: cover;
     }
-    &__text{
-      font-size: 1.1rem;
+    &__text {
+      font-size: var(--fs-0);
       font-weight: 700;
+      color: var(--text);
 
-      &--blog{
-        color: hsl(0, 0%, 70%);
+      &--blog {
+        color: var(--text-hl);
       }
     }
-    &__ul{
+    &__ul {
       justify-content: flex-end;
       gap: 1rem;
     }
     &__links {
       text-transform: capitalize;
-      color: #111;
+      // color: #111;
       font-weight: 600;
-      border: transparent 1px solid;
-      border-radius: 8px;
-      padding: .3rem .5rem;
-      transition: all .2s linear;
+      outline: transparent 1px solid;
+      // border-radius: 8px;
+      padding: 0.3rem 0.8rem;
+      transition: all 0.2s linear;
       &:hover {
-        background-color: hsl(0, 0%, 85%);
+        color: var(--secondary-button);
+        background-color: var(--text-hl);
       }
-      &[aria-current=page]{
-        background-color: #111;
-        color: white;
+      &[aria-current='page'] {
+        color: var(--secondary-button);
+        background-color: var(--text-hl);
       }
     }
   }
