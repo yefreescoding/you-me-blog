@@ -1,0 +1,39 @@
+---
+// import utils
+import { slugify, formatDate } from '../js/utils';
+
+const { relatedPosts } = Astro.props;
+
+console.log('test', relatedPosts);
+---
+
+{
+  relatedPosts.map((post) => (
+    <div class="related">
+      <img class="related__image" src={post.frontmatter.image.src} alt="" />
+      <div class="related__text">
+        <h3>{post.frontmatter.title}</h3>
+        <small>{post.frontmatter.description}</small>
+      </div>
+    </div>
+  ))
+}
+
+<style>
+  .related,
+  .related__text {
+    display: flex;
+    gap: 1em;
+  }
+
+  .related__image {
+    flex: 1;
+    object-fit: cover;
+    width: 6.125rem;
+    aspect-ratio: 4/4;
+  }
+  .related__text {
+    flex: 2;
+    flex-direction: column;
+  }
+</style>

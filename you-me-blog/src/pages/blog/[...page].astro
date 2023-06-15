@@ -13,7 +13,10 @@ import { formatBlogPost } from '../../js/utils';
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await Astro.glob('./*.md');
-  const formattedPosts = formatBlogPost(allPosts);
+  const formattedPosts = formatBlogPost(allPosts, {
+    sortbyDate: false,
+    filterOutDrafts: false,
+  });
 
   return paginate(formattedPosts, {
     pageSize: 6,
@@ -21,7 +24,7 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page } = Astro.props;
-console.log(page);
+// console.log(page);
 ---
 
 <Mainlayout title="Yefree's blog">

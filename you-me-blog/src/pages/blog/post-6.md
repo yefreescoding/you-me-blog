@@ -6,7 +6,7 @@ author: Yefree Valdez
 image: { src: '/images/blog-images/astro-blog.png', alt: 'Background picture.' }
 description: Not everything that shines is gold.
 draft: false
-category: webdev
+category: personal
 ---
 
 ## Introducing Astro: The Game-Changing Framework for Static Websites

@@ -50,5 +50,5 @@ export function formatBlogPost(
   }
 
   return filteredPosts;
-  console.log(filteredPosts);
+  // console.log(filteredPosts);
 }

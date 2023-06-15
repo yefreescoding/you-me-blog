@@ -1,5 +1,5 @@
 ---
-import { slugify, formatDate } from "../js/utils";
+import { slugify, formatDate } from '../js/utils';
 
 const { title, date, category, author, image } = Astro.props;
 ---
@@ -11,7 +11,7 @@ const { title, date, category, author, image } = Astro.props;
   <h1 class="header-blog__h1">{title}</h1>
   <div class="header-blog__division">
     <p class="header-blog__author">
-      Written by <a class="secondary" href=`/author/${slugify(author)}/`
+      Written by <a class="" href=`/author/${slugify(author)}/`
         >{slugify(author)}</a
       >
       • {formatDate(date)}

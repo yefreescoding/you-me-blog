@@ -3,10 +3,10 @@ import Mainlayout from '../layouts/MainLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import SectionEntry from '../components/SectionEntry.astro';
 import Main from '../components/Main.astro';
+// import utils js
+import { formatBlogPost } from '../js/utils';
 
 const allPosts = await Astro.glob('./blog/*.md');
-
-import { formatBlogPost } from '../js/utils';
 
 const formattedPosts = formatBlogPost(allPosts, {
   limit: 3,

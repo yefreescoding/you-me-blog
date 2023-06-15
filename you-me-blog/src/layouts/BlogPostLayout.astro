@@ -1,11 +1,28 @@
 ---
 //import layout
 import Mainlayout from './MainLayout.astro';
+
+// import components
 import BlogHeader from '../components/BlogHeader.astro';
 import CategoryCloud from '../components/CategoryCloud.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+
+// utils imports
+import { formatBlogPost } from '../js/utils';
 
 const { frontmatter } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
+
+const allPosts = await Astro.glob('../pages/blog/*.md');
+
+const formattedPosts = formatBlogPost(allPosts, {
+  sortbyDate: false,
+});
+
+const relatedPosts = formattedPosts.filter(
+  (post) =>
+    post.frontmatter.category === category && post.frontmatter.title !== title
+);
 ---
 
 <Mainlayout title={title} {description}>
@@ -17,8 +34,11 @@ const { title, description, date, category, author, image } = frontmatter;
       </div>
     </main>
     <aside class="aside">
-      <h2 class="aside__h2">More posts</h2>
-      <CategoryCloud />
+      <div class="sticky">
+        <h2 class="aside__h2">RelatedPosts</h2>
+        <CategoryCloud />
+        {relatedPosts.length > 0 && <RelatedPosts {relatedPosts} />}
+      </div>
     </aside>
   </div>
 </Mainlayout>
@@ -27,13 +47,13 @@ const { title, description, date, category, author, image } = frontmatter;
   .wrapper-blog,
   .aside,
   .aside__content,
-  .aside__text {
+  .aside__text,
+  .sticky {
     display: flex;
     gap: 1rem;
   }
   .wrapper-blog {
     flex-wrap: wrap;
-    // margin: 5rem 0;
   }
   .entry-container {
     width: min(100% - 2rem, 65ch);
@@ -42,11 +62,13 @@ const { title, description, date, category, author, image } = frontmatter;
     flex-grow: 5;
   }
   .aside {
+    position: relative;
     flex-basis: 20em;
     flex-grow: 1;
     flex-flow: column;
     &__h2 {
-      border-bottom: 1px solid hsl(0, 0%, 85%);
+      // border-bottom: 1px solid hsl(0, 0%, 85%);
+      margin-bottom: 2rem;
     }
     &__content {
       align-items: flex-start;
@@ -64,5 +86,12 @@ const { title, description, date, category, author, image } = frontmatter;
       text-decoration: underline;
       color: hsl(188, 30%, 40%);
     }
+  }
+
+  .sticky {
+    flex-flow: column;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
   }
 </style>
