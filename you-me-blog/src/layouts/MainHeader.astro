@@ -1,33 +1,34 @@
 ---
 import Navbar from '../components/Nav.astro';
 
-// Styles import 
-import '../styles/global.css'
+// Styles import
+import '../styles/global.css';
 ---
 
 <header class="header">
-    <p class="header__promo">'New Blog is being build'
-      <a class="header__promo header__promo--link" href="#" target="_blank">
-        Support me if you feel like it.
-      </a>
-    </p> 
-    <Navbar></Navbar>
+  <p class="header__promo">
+    Blog created entirely from scratch by
+    <a class="header__promo header__promo--link" href="#" target="_blank">
+      Yefree De Los Santos
+    </a>
+  </p>
+  <Navbar />
 </header>
 
-<style lang='scss'>
-  .header{
+<style lang="scss">
+  .header {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    &__promo{
-      padding: .5rem 0;
+    &__promo {
+      padding: 0.5rem 0;
       text-align: center;
-      font-size: .8rem;
+      font-size: 0.8rem;
       color: #111;
-      border-bottom: .5px solid hsl(0, 0%, 70%);
-      &--link{
+      border-bottom: 0.5px solid hsl(0, 0%, 70%);
+      &--link {
         text-decoration: underline;
-        transition: all .15s linear;
+        transition: all 0.15s linear;
         &:hover {
           color: hsl(300, 78%, 46%);
         }

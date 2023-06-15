@@ -1,28 +1,27 @@
 ---
 // Layout imports
-import Mainlayout from "../../layouts/MainLayout.astro";
+import Mainlayout from '../../layouts/MainLayout.astro';
 
 // Components imports
-import Main from "../../components/Main.astro";
-import SectionEntry from "../../components/SectionEntry.astro";
-import PostCard from "../../components/PostCard.astro";
-import Pagination from "../../components/Pagination.astro";
+import Main from '../../components/Main.astro';
+import SectionEntry from '../../components/SectionEntry.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
 
 // utils
-import { formatBlogPost } from "../../js/utils";
+import { formatBlogPost } from '../../js/utils';
 
-export async function getStaticPaths({paginate}){
-  const allPosts = await Astro.glob("./*.md");
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob('./*.md');
   const formattedPosts = formatBlogPost(allPosts);
 
-  return paginate(formattedPosts,{
-    pageSize: 3,
+  return paginate(formattedPosts, {
+    pageSize: 5,
   });
 }
 
-const {page} = Astro.props;
+const { page } = Astro.props;
 console.log(page);
-
 ---
 
 <Mainlayout title="Yefree's blog">
@@ -37,8 +36,8 @@ console.log(page);
     {
       page.data.map((post) => (
         <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
-        ))
-      }
+      ))
+    }
   </SectionEntry>
-  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next}/>
+  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
 </Mainlayout>

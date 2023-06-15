@@ -1,26 +1,27 @@
 ---
 // Components imports
-import MainHead from "../components/MainHead.astro";
-import MainHeader from "./MainHeader.astro";
-import Footer from "./Footer.astro";
-// Styles import 
-import '../styles/global.css'
+import MainHead from '../components/MainHead.astro';
+import MainHeader from './MainHeader.astro';
+import Footer from './Footer.astro';
+// Styles import
+import '../styles/global.css';
 
 //import utils
 
 import {} from '../js/utils';
+import Preloader from '../components/Preloader.astro';
 
 const { title } = Astro.props;
 ---
 
 <html lang="en">
-  <MainHead {title}></MainHead>
-  <div class="preloader">
-    <div class="orbit"></div>
-  </div>
-  <MainHeader></MainHeader>
-	<body>
-    <slot />
-    <Footer></Footer>
-	</body>
+  <MainHead {title} />
+  <body>
+    <Preloader />
+    <MainHeader />
+    <main class="wrapper">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 //import layout
-import Mainlayout from "./MainLayout.astro";
-import BlogHeader from "../components/BlogHeader.astro";
+import Mainlayout from './MainLayout.astro';
+import BlogHeader from '../components/BlogHeader.astro';
 
 const { frontmatter } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
@@ -45,6 +45,7 @@ const { title, description, date, category, author, image } = frontmatter;
     // margin: 5rem 0;
   }
   .entry-container {
+    width: min(100% - 2rem, 65ch);
     padding: 1em;
     flex-basis: 30em;
     flex-grow: 5;
