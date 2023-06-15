@@ -25,12 +25,14 @@ import { formatDate, slugify } from '../js/utils.js';
     :is(&, &__link) {
       display: flex;
     }
+    position: relative;
     flex-flow: column;
     border: 2px solid var(--text);
     padding: 0.8rem;
     box-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem;
     transition: all 0.3s ease-in-out;
     &:hover {
+      transform: translate(-3px, -3px);
       box-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem,
         rgba(240, 46, 170, 0.3) 0.625rem 0.625rem,
         rgba(240, 46, 170, 0.2) 0.9375rem 0.9375rem,

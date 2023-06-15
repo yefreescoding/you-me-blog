@@ -7,7 +7,7 @@ image:
   { src: '/images/blog-images/roadmap-blog.png', alt: 'Background picture.' }
 description: This is a briefly introduction for the blog, the first post is just a walkthrough of the things I will be posting on this space.
 draft: false
-category: web dev
+category: web-dev
 ---
 
 [Link to the official roadmap](https://roadmap.sh/frontend)

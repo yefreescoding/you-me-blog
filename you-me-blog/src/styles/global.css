@@ -24,9 +24,9 @@
     --text: hsl(73, 70%, 94%);
     --text-content: hsl(73, 20%, 84%);
     --text-hl: hsl(196, 19%, 73%);
-    --background: hsl(56, 70%, 6%);
+    --background: hsl(270, 5%, 7%);
     --primary-button: hsl(195, 87%, 69%);
-    --secondary-button: hsl(0, 0%, 95%);
+    --secondary-button: hsl(0, 0%, 5%);
     --accent: hsl(315, 89%, 78%);
   }
 }
@@ -106,7 +106,7 @@ p {
   color: var(--text-content);
 }
 
-/* Links styles */
+/* Special styles styles */
 
 .primary {
   background-color: var(--accent);

@@ -1,33 +1,33 @@
 ---
-import navData from "../Data/NavData";
+import navData from '../Data/NavData';
 
 const socialLinks = [
   {
-    title: "Instagram",
-    link: "https://www.instagram.com/",
+    title: 'Instagram',
+    link: 'https://www.instagram.com/',
   },
   {
-    title: "Twitter",
-    link: "https://twitter.com/",
+    title: 'Twitter',
+    link: 'https://twitter.com/',
   },
   {
-    title: "GitHub",
-    link: "https://github.com/",
+    title: 'GitHub',
+    link: 'https://github.com/',
   },
 ];
 
 const ConnectLinks = [
   {
-    title: "About",
-    link: "/about/",
+    title: 'About',
+    link: '/about/',
   },
   {
-    title: "Mail",
-    link: "#",
+    title: 'Email Me',
+    link: '#',
   },
   {
-    title: "GitHub",
-    link: "https://github.com/",
+    title: 'Portfolio',
+    link: 'https://github.com/',
   },
 ];
 ---
@@ -38,7 +38,7 @@ const ConnectLinks = [
       <h3 class="footer__h3">Social Media</h3>
       {
         socialLinks.map((item) => (
-          <a class="footer__links" href={item.link}>
+          <a class="footer__links" href={item.link} target="_blank">
             {item.title}
           </a>
         ))
@@ -48,7 +48,7 @@ const ConnectLinks = [
       <h3 class="footer__h3">Connect</h3>
       {
         ConnectLinks.map((item) => (
-          <a class="footer__links" href={item.link}>
+          <a class="footer__links" href={item.link} target="_blank">
             {item.title}
           </a>
         ))
@@ -72,26 +72,20 @@ const ConnectLinks = [
       flex-direction: column;
       gap: 0.5rem;
     }
-    color: hsl(0, 0%, 60%);
     padding: 0.5rem 3rem;
-    background-color: hsl(60, 7%, 90%);
+    background-color: var(--background);
     text-align: center;
+    border-top: 2px solid var(--text);
     &__nav {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
       place-items: center;
     }
-    &__h3 {
-      font-size: 1.3rem;
-    }
-    &__links {
-      color: hsl(0, 0%, 60%);
-    }
   }
 </style>
 
 <script>
-  document.querySelector("#copyright").textContent = new Date()
+  document.querySelector('#copyright').textContent = new Date()
     .getFullYear()
     .toString();
 </script>

@@ -1,67 +1,57 @@
 ---
+import Mainlayout from '../../layouts/MainLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import SectionEntry from '../../components/SectionEntry.astro';
+import Main from '../../components/Main.astro';
 
-import Mainlayout from "../../layouts/MainLayout.astro";
-import PostCard from "../../components/PostCard.astro";
-import SectionEntry from "../../components/SectionEntry.astro";
-import Main from "../../components/Main.astro";
-
-
-import { slugify, formatBlogPost } from "../../js/utils";
+import { slugify, formatBlogPost } from '../../js/utils';
 
 export async function getStaticPaths() {
   return [
     {
-      params: { category: slugify("web dev")},
-      props: { name: 'Web Dev'},
+      params: { category: slugify('web dev') },
+      props: { name: 'Web Dev' },
     },
     {
-      params: { category: slugify('learning')},
-      props: { name: 'Learning'},
+      params: { category: slugify('learning') },
+      props: { name: 'Learning' },
     },
     {
-      params: { category: slugify('personal')},
-      props: { name: 'Personal'},
+      params: { category: slugify('personal') },
+      props: { name: 'Personal' },
     },
     {
-      params: { category: slugify('tech')},
-      props: { name: 'Technologies'},
-    }
-  ] 
+      params: { category: slugify('tech') },
+      props: { name: 'Technologies' },
+    },
+  ];
 }
 const { category } = Astro.params;
 const { name } = Astro.props;
 
-const allPosts = await Astro.glob("../blog/*.md");
+const allPosts = await Astro.glob('../blog/*.md');
 
 const formattedPosts = formatBlogPost(allPosts, {
-	limit: 3,
+  limit: 3,
 });
 
-const catePost = formattedPosts.filter((post) =>
-  slugify(post.frontmatter.category) === category
+const catePost = formattedPosts.filter(
+  (post) => slugify(post.frontmatter.category) === category
 );
-
-
 ---
 
 <Mainlayout title={name}>
-	<Main pageTitle={`Post About ${name}`}>
-		<p>
-			We share insider tips, invaluable advice and insight to 
-      help you at every stage of your creative career. That's 
-      whether you've just graduated, started a new job, gone 
-      freelance or launched a new business.
-		</p>
-	</Main>
-	<SectionEntry class="entries" aria-label="Latest blog posts">
-		{
-			catePost.map((post) => (
-				<PostCard
-					frontmatter={post.frontmatter}
-					url={post.url}
-					tagType="h2"
-				/>
-			))
-		}
-	</SectionEntry>
+  <Main pageTitle={`Post About ${name}`}>
+    <p>
+      Here you can find all the post related to {name}. Perfectly organized for
+      you to waste no time.
+    </p>
+  </Main>
+  <SectionEntry class="entries" aria-label="Latest blog posts">
+    {
+      catePost.map((post) => (
+        <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
+      ))
+    }
+  </SectionEntry>
 </Mainlayout>

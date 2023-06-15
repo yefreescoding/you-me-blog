@@ -6,7 +6,7 @@ author: Yefree Valdez
 image: { src: '/images/blog-images/job-blog.png', alt: 'Background picture.' }
 description: Ok, now what??...
 draft: false
-category: web dev
+category: web-dev
 ---
 
 ## Unlocking Your Path to Landing Your First Front End Developer Job

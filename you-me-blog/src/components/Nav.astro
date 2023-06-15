@@ -29,7 +29,6 @@ import navData from '../Data/NavData';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 1rem;
     :is(&__logo, &__ul) {
       display: flex;
       flex: 1;
@@ -39,12 +38,13 @@ import navData from '../Data/NavData';
       gap: 0.8rem;
     }
     &__image {
-      width: 4rem;
+      width: 3rem;
       aspect-ratio: 1;
       object-fit: cover;
+      filter: invert(1);
     }
     &__text {
-      font-size: var(--fs-0);
+      font-size: var(--fs--1);
       font-weight: 700;
       color: var(--text);
 
@@ -58,10 +58,8 @@ import navData from '../Data/NavData';
     }
     &__links {
       text-transform: capitalize;
-      // color: #111;
       font-weight: 600;
       outline: transparent 1px solid;
-      // border-radius: 8px;
       padding: 0.3rem 0.8rem;
       transition: all 0.2s linear;
       &:hover {
