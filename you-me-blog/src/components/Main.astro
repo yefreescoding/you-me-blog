@@ -1,25 +1,21 @@
 ---
 // import components
 import CategoryCloud from './CategoryCloud.astro';
-const { pageTitle, pageDescription } = Astro.props;
+const { coverTitle, pageDescription } = Astro.props;
 ---
 
 <section class="cover">
-  <CategoryCloud />
-  <h1 class="cover__h1">{pageTitle}</h1>
+  <h1 class="cover__h1">{coverTitle}</h1>
   <slot />
 </section>
 <style lang="scss">
   .cover {
-    gap: 1em;
     margin-block: 2vh;
     &__h1 {
+      margin-block: 3rem;
       font-style: italic;
       font-size: var(--fs-5);
-      text-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem,
-        rgba(240, 46, 170, 0.3) 0.625rem 0.625rem,
-        rgba(240, 46, 170, 0.2) 0.9375rem 0.9375rem,
-        rgba(240, 46, 170, 0.1) 1.25rem 1.25rem;
+      text-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem;
     }
   }
 </style>

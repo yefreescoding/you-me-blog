@@ -7,6 +7,7 @@ import Main from '../../components/Main.astro';
 import SectionEntry from '../../components/SectionEntry.astro';
 import PostCard from '../../components/PostCard.astro';
 import Pagination from '../../components/Pagination.astro';
+import CategoryCloud from '../../components/CategoryCloud.astro';
 
 // utils
 import { formatBlogPost } from '../../js/utils';
@@ -24,17 +25,17 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page } = Astro.props;
-// console.log(page);
 ---
 
-<Mainlayout title="Yefree's blog">
-  <Main pageTitle="Blog Entries">
+<Mainlayout title="Yefree's blog" subtitle="All Entries">
+  <Main coverTitle="Blog Entries">
     <p class="main__p">
       Inspiring work and projects from all the resources I like to use to learn,
       from amazing designers, developers and programmers, along with all my
       thoughts and opinions.
     </p>
   </Main>
+  <CategoryCloud />
   <SectionEntry>
     {
       page.data.map((post) => (

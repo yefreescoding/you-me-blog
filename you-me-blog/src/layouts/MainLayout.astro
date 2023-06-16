@@ -6,16 +6,13 @@ import Footer from './Footer.astro';
 // Styles import
 import '../styles/global.css';
 
-//import utils
-
-import {} from '../js/utils';
 import Preloader from '../components/Preloader.astro';
 
-const { title } = Astro.props;
+const { title, subtitle } = Astro.props;
 ---
 
 <html lang="en">
-  <MainHead {title} />
+  <MainHead {title} {subtitle} />
   <body>
     <Preloader />
     <MainHeader />

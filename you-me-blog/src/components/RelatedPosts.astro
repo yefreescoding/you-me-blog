@@ -3,19 +3,17 @@
 import { slugify, formatDate } from '../js/utils';
 
 const { relatedPosts } = Astro.props;
-
-console.log('test', relatedPosts);
 ---
 
 {
   relatedPosts.map((post) => (
-    <div class="related">
+    <a href={post.url} class="related">
       <img class="related__image" src={post.frontmatter.image.src} alt="" />
       <div class="related__text">
         <h3>{post.frontmatter.title}</h3>
         <small>{post.frontmatter.description}</small>
       </div>
-    </div>
+    </a>
   ))
 }
 
@@ -24,6 +22,22 @@ console.log('test', relatedPosts);
   .related__text {
     display: flex;
     gap: 1em;
+  }
+
+  .related {
+    border: 2px solid var(--text);
+    padding: 0.5rem;
+    box-shadow: hsla(322, 87%, 56%, 0.4) 0.3125rem 0.3125rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .related:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: rgba(240, 46, 170, 0.4) 0.3125rem 0.3125rem,
+      rgba(240, 46, 170, 0.3) 0.625rem 0.625rem,
+      rgba(240, 46, 170, 0.2) 0.9375rem 0.9375rem,
+      rgba(240, 46, 170, 0.1) 1.25rem 1.25rem,
+      rgba(240, 46, 170, 0.05) 1.5625rem 1.5625rem;
   }
 
   .related__image {

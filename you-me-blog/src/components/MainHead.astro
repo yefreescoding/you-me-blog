@@ -1,9 +1,21 @@
 ---
-const { title } = Astro.props;
+import SiteMeta from './SiteMeta.astro';
+const {
+  title,
+  subtitle,
+  description = "Yefree's personal blog",
+  url = 'https://you-me-blog.vercel.app',
+  image = '/opengraph.png',
+  author = 'Yefree De Los Santos',
+} = Astro.props;
+
+const { pageTitle } = Astro.props;
 ---
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
   <!-- Fonts Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +28,17 @@ const { title } = Astro.props;
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{title}</title>
+  <SiteMeta
+    title={title}
+    subtitle={subtitle}
+    description={description.substring(0, 100)}
+    url={Astro.site
+      ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
+      : `https://you-me-blog.vercel.app`}
+    image={image}
+    author={author}
+  />
+  <head>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
 </head>

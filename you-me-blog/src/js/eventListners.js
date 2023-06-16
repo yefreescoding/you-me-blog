@@ -12,7 +12,7 @@ const preloader = document.querySelector('.preloader');
 //   preloader.classList.add('loaded');
 // });
 
-const loaderTime = setTimeout(loading, 1500);
+const loaderTime = setTimeout(loading, 1200);
 
 function loading() {
   preloader.classList.add('loaded');

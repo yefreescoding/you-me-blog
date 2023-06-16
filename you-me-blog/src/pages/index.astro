@@ -9,12 +9,18 @@ import { formatBlogPost } from '../js/utils';
 const allPosts = await Astro.glob('./blog/*.md');
 
 const formattedPosts = formatBlogPost(allPosts, {
+  limit: 6,
+  filterOutDrafts: false,
+});
+
+const pinnedBlogPosts = formatBlogPost(allPosts, {
   limit: 3,
+  sortbyDate: false,
 });
 ---
 
-<Mainlayout title="Yefree's blog">
-  <Main pageTitle="Latest">
+<Mainlayout title="Yefree's blog" subtitle="HOME">
+  <Main coverTitle="Latest">
     <p>
       <strong class="highlight">Welcome to the blog</strong>. Here you can find
       the latest post I've published recently.
@@ -27,12 +33,26 @@ const formattedPosts = formatBlogPost(allPosts, {
       ))
     }
   </SectionEntry>
+  <Main coverTitle="Pinned Entries">
+    <p>
+      <strong class="highlight">The most raad, and important entries.</strong>.
+      No matter in what fase of your learning proccess are you, this articles
+      will help you achieve all your goals.
+    </p>
+  </Main>
+  <SectionEntry class="entries" aria-label="Latest blog posts">
+    {
+      pinnedBlogPosts.map((post) => (
+        <PostCard frontmatter={post.frontmatter} url={post.url} tagType="h2" />
+      ))
+    }
+  </SectionEntry>
 </Mainlayout>
 
 <style lang="scss">
   .main {
     &__image {
-      width: 13rem;
+      // width: 13rem;
       aspect-ratio: 1;
       object-fit: contain;
       object-position: center;
